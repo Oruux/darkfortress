@@ -1,11 +1,19 @@
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { Search, ShieldAlert, UserPlus, Laptop, Lock, GraduationCap, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
+
+// Importar los SVGs
+import osintSvg from '@/assets/osint.svg';
+import threatIntelligenceSvg from '@/assets/threat-intelligence.svg';
+import cyberRiskSvg from '@/assets/cyber-risk.svg';
+import digitalForensicsSvg from '@/assets/digital-forensics.svg';
+import securityMonitoringSvg from '@/assets/security-monitoring.svg';
+import securityTrainingSvg from '@/assets/security-training.svg';
 
 const services = [
   {
     id: 1,
-    icon: <Search className="text-2xl text-primary" />,
+    icon: osintSvg,
     title: 'OSINT Investigations',
     description: 'Descubra amenazas y oportunidades mediante técnicas avanzadas de inteligencia de fuentes abiertas.',
     features: [
@@ -16,7 +24,7 @@ const services = [
   },
   {
     id: 2,
-    icon: <ShieldAlert className="text-2xl text-primary" />,
+    icon: threatIntelligenceSvg,
     title: 'Threat Intelligence',
     description: 'Anticipamos y mitigamos amenazas cibernéticas antes de que impacten su organización.',
     features: [
@@ -27,7 +35,7 @@ const services = [
   },
   {
     id: 3,
-    icon: <UserPlus className="text-2xl text-primary" />,
+    icon: cyberRiskSvg,
     title: 'Cyber Risk Assessment',
     description: 'Evaluamos sus vulnerabilidades y fortalecemos su postura de seguridad con metodologías avanzadas.',
     features: [
@@ -38,7 +46,7 @@ const services = [
   },
   {
     id: 4,
-    icon: <Laptop className="text-2xl text-primary" />,
+    icon: digitalForensicsSvg,
     title: 'Digital Forensics',
     description: 'Investigación y análisis forense digital para la reconstrucción de incidentes y evidencias.',
     features: [
@@ -49,7 +57,7 @@ const services = [
   },
   {
     id: 5,
-    icon: <Lock className="text-2xl text-primary" />,
+    icon: securityMonitoringSvg,
     title: 'Security Monitoring',
     description: 'Vigilancia continua de su infraestructura para detectar y responder a amenazas en tiempo real.',
     features: [
@@ -60,7 +68,7 @@ const services = [
   },
   {
     id: 6,
-    icon: <GraduationCap className="text-2xl text-primary" />,
+    icon: securityTrainingSvg,
     title: 'Security Training',
     description: 'Capacitación especializada en ciberseguridad e OSINT para su equipo técnico y empleados.',
     features: [
@@ -111,8 +119,13 @@ const Services = () => {
               viewport={{ once: true }}
               variants={serviceVariants}
             >
-              <div className="bg-primary bg-opacity-20 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                {service.icon}
+              <div className="w-16 h-16 mb-6 flex items-center justify-center">
+                <img 
+                  src={service.icon} 
+                  alt={service.title} 
+                  className="w-full h-full object-contain" 
+                  style={{ filter: 'brightness(0) invert(0.5) sepia(1) saturate(5) hue-rotate(230deg)' }}
+                />
               </div>
               <h3 className="text-xl font-bold font-inter mb-3">{service.title}</h3>
               <p className="text-muted-foreground flex-grow">
