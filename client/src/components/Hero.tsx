@@ -14,7 +14,7 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold font-inter mb-6 leading-tight">
+            <h1 id="hero-heading" className="text-4xl md:text-6xl font-bold font-inter mb-6 leading-tight">
               Protección de <span className="gradient-text text-shadow">Inteligencia</span> para su Organización
             </h1>
             <p className="text-xl text-muted-foreground mb-8">

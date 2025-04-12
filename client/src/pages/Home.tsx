@@ -22,28 +22,53 @@ const Home = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       className="relative overflow-x-hidden"
+      itemScope
+      itemType="https://schema.org/WebPage"
     >
+      {/* Fondo con efecto de red */}
       <NetworkBackground />
       
-      <Navbar />
+      {/* Barra de navegación */}
+      <header>
+        <Navbar />
+      </header>
       
-      <main>
-        <Hero />
+      {/* Contenido principal */}
+      <main id="main-content" role="main">
+        {/* Sección Hero */}
+        <section aria-labelledby="hero-heading">
+          <Hero />
+        </section>
         
         <AngledDivider topColor="bg-background" bottomColor="bg-black" />
         
-        <Services />
+        {/* Sección de Servicios */}
+        <section aria-labelledby="services-heading">
+          <Services />
+        </section>
         
         <AngledDivider direction="up" topColor="bg-black" bottomColor="bg-background" />
         
-        <About />
+        {/* Sección Acerca de */}
+        <section aria-labelledby="about-heading">
+          <About />
+        </section>
         
-        <Capabilities />
+        {/* Sección de Capacidades */}
+        <section aria-labelledby="capabilities-heading">
+          <Capabilities />
+        </section>
         
-        <Contact />
+        {/* Sección de Contacto */}
+        <section aria-labelledby="contact-heading">
+          <Contact />
+        </section>
       </main>
       
-      <Footer />
+      {/* Pie de página */}
+      <footer>
+        <Footer />
+      </footer>
     </motion.div>
   );
 };

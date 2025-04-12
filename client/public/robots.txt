@@ -1,0 +1,6 @@
+# Archivo robots.txt para DarkFortress Intelligence
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://darkfortress.com.mx/sitemap.xml
