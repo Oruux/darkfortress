@@ -16,29 +16,86 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="relative flex items-center justify-center w-full h-full">
-              <div className="rounded-xl p-12 shadow-lg glass-card relative flex flex-col items-center justify-center w-full bg-gradient-to-br from-black to-slate-900">
+              <div className="rounded-xl p-16 shadow-lg relative flex flex-col items-center justify-center w-full bg-black">
                 <motion.div
+                  className="relative"
                   animate={{
-                    scale: [1, 1.05, 1],
-                    rotate: [0, 1, 0, -1, 0]
+                    opacity: [0.9, 1, 0.9]
                   }}
                   transition={{
                     repeat: Infinity,
-                    duration: 6,
+                    duration: 3,
                     ease: "easeInOut"
                   }}
                 >
-                  <DFILogo className="h-60 w-60" />
+                  {/* Capas múltiples de efectos de resplandor */}
+                  <div className="absolute inset-0 opacity-50" style={{ 
+                    filter: 'blur(30px)',
+                    background: 'radial-gradient(circle, rgba(139, 92, 246, 0.6) 0%, rgba(76, 29, 149, 0.2) 50%, rgba(0, 0, 0, 0) 100%)'
+                  }}></div>
+                  
+                  <div className="absolute inset-0 opacity-70" style={{ 
+                    filter: 'blur(15px)',
+                    background: 'radial-gradient(circle, rgba(167, 139, 250, 0.5) 0%, rgba(139, 92, 246, 0.2) 60%, rgba(0, 0, 0, 0) 100%)'
+                  }}></div>
+                  
+                  {/* Logo con efecto neón brillante */}
+                  <div className="relative z-10" style={{ 
+                    filter: 'drop-shadow(0 0 8px rgba(167, 139, 250, 0.9)) drop-shadow(0 0 20px rgba(139, 92, 246, 0.5))'
+                  }}>
+                    <motion.div
+                      animate={{
+                        filter: ['drop-shadow(0 0 8px rgba(167, 139, 250, 0.9))', 'drop-shadow(0 0 12px rgba(167, 139, 250, 1))', 'drop-shadow(0 0 8px rgba(167, 139, 250, 0.9))']
+                      }}
+                      transition={{
+                        repeat: Infinity,
+                        duration: 2,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      <DFILogo className="h-64 w-64" />
+                    </motion.div>
+                  </div>
                 </motion.div>
                 
+                {/* Texto DFI grande con efecto neón */}
                 <motion.div 
-                  className="text-center mt-6 border-t border-slate-800 pt-4 px-2"
+                  className="mt-6"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.5 }}
                 >
-                  <h4 className="text-primary font-bold mb-2">El Zorro: Guardián de la Red</h4>
+                  <motion.h2 
+                    className="text-6xl font-bold tracking-widest mt-4"
+                    style={{ 
+                      color: 'white',
+                      textShadow: '0 0 10px rgba(167, 139, 250, 0.8), 0 0 20px rgba(139, 92, 246, 0.6)'
+                    }}
+                    animate={{
+                      textShadow: [
+                        '0 0 10px rgba(167, 139, 250, 0.8), 0 0 20px rgba(139, 92, 246, 0.6)',
+                        '0 0 15px rgba(167, 139, 250, 1), 0 0 30px rgba(139, 92, 246, 0.8)',
+                        '0 0 10px rgba(167, 139, 250, 0.8), 0 0 20px rgba(139, 92, 246, 0.6)'
+                      ]
+                    }}
+                    transition={{
+                      repeat: Infinity, 
+                      duration: 2.5,
+                      ease: "easeInOut"
+                    }}
+                  >
+                    DFI
+                  </motion.h2>
+                </motion.div>
+                
+                <motion.div 
+                  className="text-center mt-8 pt-4 px-2 max-w-sm"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.7 }}
+                >
                   <p className="text-gray-400 text-sm">
                     Como el zorro, nos movemos sigilosos y astutos en el ámbito digital, detectando amenazas antes de que ataquen. 
                     Combinamos inteligencia, adaptabilidad y perspicacia para proteger lo que más importa.
