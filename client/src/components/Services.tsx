@@ -138,9 +138,8 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-              <Button 
-                variant="ghost" 
-                className="text-white hover:text-primary border-none mt-5 p-0 flex items-center justify-start gap-2"
+              <button 
+                className="bg-transparent text-white hover:text-primary border-none mt-5 p-0 flex items-center justify-start gap-2 focus:outline-none transition-colors duration-300"
                 onClick={() => {
                   const element = document.querySelector('#contacto');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -148,7 +147,7 @@ const Services = () => {
               >
                 <span>Solicitar Servicio</span>
                 <ArrowRight className="h-4 w-4" />
-              </Button>
+              </button>
             </motion.div>
           ))}
         </div>
