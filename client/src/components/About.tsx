@@ -2,6 +2,43 @@ import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { ShieldCheck, TrendingUp, Users, Lock } from 'lucide-react';
 import { DFILogo } from '@/assets/logo';
+import { useState, useEffect } from 'react';
+
+// Componente para texto tipo terminal
+const TerminalText = ({ text, className, delay = 0.05 }: { text: string, className?: string, delay?: number }) => {
+  const [displayText, setDisplayText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [cursorVisible, setCursorVisible] = useState(true);
+  
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayText(prev => prev + text[currentIndex]);
+        setCurrentIndex(currentIndex + 1);
+      }, delay * 1000);
+      
+      return () => clearTimeout(timeout);
+    } else {
+      // Cuando termina de escribir, parpadea el cursor
+      const interval = setInterval(() => {
+        setCursorVisible(prev => !prev);
+      }, 500);
+      
+      return () => clearInterval(interval);
+    }
+  }, [currentIndex, text, delay]);
+  
+  return (
+    <div className={className}>
+      <span>{displayText}</span>
+      {currentIndex < text.length || cursorVisible ? (
+        <span className="text-primary">|</span>
+      ) : (
+        <span> </span>
+      )}
+    </div>
+  );
+};
 
 const About = () => {
   return (
@@ -96,10 +133,16 @@ const About = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.7 }}
                 >
-                  <p className="text-gray-400 text-sm">
-                    Como el zorro, nos movemos sigilosos y astutos en el ámbito digital, detectando amenazas antes de que ataquen. 
-                    Combinamos inteligencia, adaptabilidad y perspicacia para proteger lo que más importa.
-                  </p>
+                  <h4 className="text-white font-mono font-bold mb-3">
+                    $ <span className="text-green-400">cat</span> <span className="text-primary">zorro_guardian.txt</span>
+                  </h4>
+                  <div className="bg-black bg-opacity-60 p-3 rounded-md border border-slate-800 font-mono">
+                    <TerminalText 
+                      text="Como el zorro, nos movemos sigilosos y astutos en el ámbito digital, detectando amenazas antes de que ataquen. Combinamos inteligencia, adaptabilidad y perspicacia para proteger lo que más importa."
+                      className="text-gray-300 text-xs text-left leading-relaxed" 
+                      delay={0.02}
+                    />
+                  </div>
                 </motion.div>
               </div>
               <motion.div 
