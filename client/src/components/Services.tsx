@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 // Importar los SVGs
 import osintSvg from '@/assets/osint.svg';
@@ -93,7 +93,7 @@ const serviceVariants = {
 
 const Services = () => {
   return (
-    <section id="servicios" className="py-20 relative bg-secondary">
+    <section id="servicios" className="py-20 relative bg-black">
       <div className="container mx-auto px-6 z-10 relative">
         <motion.div 
           className="text-center mb-16"
@@ -102,8 +102,8 @@ const Services = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold font-inter mb-4 gradient-text">Servicios de Inteligencia</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold font-inter mb-4 text-white">Servicios de Inteligencia</h2>
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
             Ofrecemos soluciones avanzadas de ciberseguridad e inteligencia OSINT para proteger su infraestructura y datos críticos.
           </p>
         </motion.div>
@@ -112,42 +112,42 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div
               key={service.id}
-              className="glass-card rounded-xl p-6 h-full flex flex-col"
+              className="bg-zinc-900 border border-zinc-800 rounded-lg p-8 h-full flex flex-col hover:border-zinc-700 transition-all duration-300"
               custom={index}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={serviceVariants}
             >
-              <div className="w-16 h-16 mb-6 flex items-center justify-center">
+              <div className="mb-6">
                 <img 
                   src={service.icon} 
                   alt={service.title} 
-                  className="w-full h-full object-contain" 
-                  style={{ filter: 'brightness(0) invert(0.5) sepia(1) saturate(5) hue-rotate(230deg)' }}
+                  className="w-14 h-14 object-contain" 
+                  style={{ filter: 'brightness(0) invert(1)' }}
                 />
               </div>
-              <h3 className="text-xl font-bold font-inter mb-3">{service.title}</h3>
-              <p className="text-muted-foreground flex-grow">
+              <h3 className="text-xl font-bold font-inter mb-3 text-white">{service.title}</h3>
+              <p className="text-gray-400 mb-5 text-sm">
                 {service.description}
               </p>
-              <ul className="mt-4 space-y-2 mb-6">
+              <ul className="border-t border-zinc-800 pt-4 mt-auto">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center">
-                    <Check className="text-primary mr-2 h-4 w-4" />
-                    <span>{feature}</span>
+                  <li key={idx} className="text-gray-400 text-sm py-1.5">
+                    {feature}
                   </li>
                 ))}
               </ul>
               <Button 
-                variant="outline" 
-                className="text-primary hover:text-white hover:bg-primary border-primary transition duration-300 mt-auto"
+                variant="ghost" 
+                className="text-white hover:text-primary border-none mt-5 p-0 flex items-center justify-start gap-2"
                 onClick={() => {
                   const element = document.querySelector('#contacto');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Solicitar Servicio
+                <span>Solicitar Servicio</span>
+                <ArrowRight className="h-4 w-4" />
               </Button>
             </motion.div>
           ))}

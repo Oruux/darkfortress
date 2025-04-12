@@ -30,11 +30,11 @@ const Home = () => {
       <main>
         <Hero />
         
-        <AngledDivider />
+        <AngledDivider topColor="bg-background" bottomColor="bg-black" />
         
         <Services />
         
-        <AngledDivider direction="up" />
+        <AngledDivider direction="up" topColor="bg-black" bottomColor="bg-background" />
         
         <About />
         
