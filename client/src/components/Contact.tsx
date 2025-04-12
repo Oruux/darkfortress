@@ -149,8 +149,10 @@ const Contact = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4 }}
                   >
-                    <div className="bg-primary bg-opacity-20 p-2 rounded-full flex items-center justify-center mt-1">
-                      <Mail className="text-primary h-5 w-5" />
+                    <div className="flex items-center justify-center mt-1">
+                      <Mail className="h-6 w-6 text-white stroke-[1.25]" style={{ 
+                        filter: 'drop-shadow(0 0 3px rgba(167, 139, 250, 0.9))' 
+                      }} />
                     </div>
                     <div>
                       <h4 className="font-bold font-inter">Email</h4>
@@ -165,8 +167,10 @@ const Contact = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.1 }}
                   >
-                    <div className="bg-primary bg-opacity-20 p-2 rounded-full flex items-center justify-center mt-1">
-                      <Phone className="text-primary h-5 w-5" />
+                    <div className="flex items-center justify-center mt-1">
+                      <Phone className="h-6 w-6 text-white stroke-[1.25]" style={{ 
+                        filter: 'drop-shadow(0 0 3px rgba(167, 139, 250, 0.9))' 
+                      }} />
                     </div>
                     <div>
                       <h4 className="font-bold font-inter">Teléfono</h4>
@@ -181,8 +185,10 @@ const Contact = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.2 }}
                   >
-                    <div className="bg-primary bg-opacity-20 p-2 rounded-full flex items-center justify-center mt-1">
-                      <MapPin className="text-primary h-5 w-5" />
+                    <div className="flex items-center justify-center mt-1">
+                      <MapPin className="h-6 w-6 text-white stroke-[1.25]" style={{ 
+                        filter: 'drop-shadow(0 0 3px rgba(167, 139, 250, 0.9))' 
+                      }} />
                     </div>
                     <div>
                       <h4 className="font-bold font-inter">Ubicación</h4>
@@ -202,24 +208,30 @@ const Contact = () => {
                   <div className="flex space-x-4">
                     <a 
                       href="#" 
-                      className="bg-primary bg-opacity-20 p-2 rounded-full text-primary hover:bg-primary hover:text-white transition duration-300"
+                      className="p-2 transition duration-300 hover:scale-110"
                       aria-label="LinkedIn"
                     >
-                      <Linkedin className="h-5 w-5" />
+                      <Linkedin className="h-6 w-6 text-white stroke-[1.25]" style={{ 
+                        filter: 'drop-shadow(0 0 3px rgba(167, 139, 250, 0.9))' 
+                      }} />
                     </a>
                     <a 
                       href="#" 
-                      className="bg-primary bg-opacity-20 p-2 rounded-full text-primary hover:bg-primary hover:text-white transition duration-300"
+                      className="p-2 transition duration-300 hover:scale-110"
                       aria-label="Twitter"
                     >
-                      <Twitter className="h-5 w-5" />
+                      <Twitter className="h-6 w-6 text-white stroke-[1.25]" style={{ 
+                        filter: 'drop-shadow(0 0 3px rgba(167, 139, 250, 0.9))' 
+                      }} />
                     </a>
                     <a 
                       href="#" 
-                      className="bg-primary bg-opacity-20 p-2 rounded-full text-primary hover:bg-primary hover:text-white transition duration-300"
+                      className="p-2 transition duration-300 hover:scale-110"
                       aria-label="GitHub"
                     >
-                      <Github className="h-5 w-5" />
+                      <Github className="h-6 w-6 text-white stroke-[1.25]" style={{ 
+                        filter: 'drop-shadow(0 0 3px rgba(167, 139, 250, 0.9))' 
+                      }} />
                     </a>
                   </div>
                 </motion.div>
