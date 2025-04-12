@@ -90,11 +90,11 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
           {showLogo && (
             <div className="mt-4 flex flex-col items-center">
               <div className="font-inter font-bold text-3xl md:text-4xl flex">
-                <TextReveal text="Dark" delay={1} className="mr-0" />
-                <TextReveal text="Fortress" delay={1.3} className="mr-0" textColor="text-primary" />
+                <TextReveal text="Dark" delay={1} className="mr-0" textColor="text-white" />
+                <TextReveal text="Fortress" delay={1.3} className="mr-0" textColor="text-white" />
               </div>
               <div className="font-inter font-bold text-3xl md:text-4xl flex mt-1">
-                <TextReveal text="Intelligence" delay={1.8} textColor="text-white" />
+                <TextReveal text="Intelligence" delay={1.8} textColor="text-primary" />
               </div>
             </div>
           )}
