@@ -1,6 +1,6 @@
 # DarkFortress Intelligence - Landing Page
 
-![DarkFortress Intelligence](./client/public/logo.png)
+![DarkFortress Intelligence](./client/public/dfi logo.png)
 
 ## Descripción
 
