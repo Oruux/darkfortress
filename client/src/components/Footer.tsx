@@ -14,8 +14,8 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Link href="/" className="flex items-center space-x-2 mb-6">
-              <DFILogo className="h-8 w-8" />
+            <Link href="/" className="flex items-center space-x-3 mb-6">
+              <DFILogo className="h-10 w-10" />
               <span className="text-lg font-bold font-inter text-foreground">
                 DarkFortress <span className="gradient-text">Intelligence</span>
               </span>

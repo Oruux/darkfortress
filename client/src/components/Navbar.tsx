@@ -53,8 +53,8 @@ const Navbar = () => {
     >
       <nav className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <DFILogo className="h-10 w-10" />
+          <Link href="/" className="flex items-center space-x-3">
+            <DFILogo className="h-12 w-12" />
             <span className="text-xl font-bold font-inter text-foreground">
               DarkFortress <span className="gradient-text">Intelligence</span>
             </span>
