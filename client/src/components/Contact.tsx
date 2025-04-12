@@ -170,7 +170,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-bold font-inter">Teléfono</h4>
-                      <p className="text-muted-foreground">+34 912 456 789</p>
+                      <p className="text-muted-foreground">+52 56 1482 7476</p>
                     </div>
                   </motion.li>
                   
