@@ -93,40 +93,36 @@ DarkFortressLanding/
 
 ## Despliegue en Vercel
 
-Este proyecto está configurado para ser desplegado fácilmente en Vercel. Sigue estos pasos para realizar el despliegue:
+Este proyecto está configurado para ser desplegado fácilmente en Vercel usando los mismos comandos que utilizas en producción. Sigue estos pasos para realizar el despliegue:
 
 ### 1. Preparación del proyecto
 
-Para optimizar el despliegue en Vercel, es recomendable realizar las siguientes modificaciones:
-
-1. Crea un archivo `vercel.json` en la raíz del proyecto con la siguiente configuración:
+Ya hemos creado el archivo `vercel.json` en la raíz del proyecto con la siguiente configuración:
 
 ```json
 {
   "version": 2,
   "builds": [
     {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist/public" }
-    },
-    {
-      "src": "server/index.ts",
-      "use": "@vercel/node"
+      "src": "package.json",
+      "use": "@vercel/node",
+      "config": {
+        "buildCommand": "npm run build",
+        "outputDirectory": "dist"
+      }
     }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "server/index.ts" },
-    { "src": "/(.*)", "dest": "client/index.html" }
+    { "src": "/api/(.*)", "dest": "dist/index.js" },
+    { "src": "/(.*)", "dest": "dist/public/$1" }
   ]
 }
 ```
 
-2. Asegúrate de que el script de build en `package.json` esté preparado para Vercel:
-
-```json
-"build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist"
-```
+Esta configuración utiliza el mismo flujo de construcción que usas en producción:
+1. `npm install` (ejecutado automáticamente por Vercel)
+2. `npm run build` (especificado en la configuración)
+3. `npm run start` (gestionado automáticamente por Vercel después del despliegue)
 
 ### 2. Despliega el proyecto
 
