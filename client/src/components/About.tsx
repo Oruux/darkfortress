@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { ShieldCheck, TrendingUp, Users, Lock } from 'lucide-react';
+import { DFILogo } from '@/assets/logo';
 
 const About = () => {
   return (
@@ -14,21 +15,31 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1588508065123-287b28e013da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
-                alt="Equipo de profesionales de ciberseguridad" 
-                className="rounded-xl shadow-lg glass-card"
+            <div className="relative flex items-center justify-center w-full h-full">
+              <div className="rounded-xl p-12 shadow-lg glass-card relative flex items-center justify-center w-full bg-gradient-to-br from-black to-slate-900">
+                <motion.div
+                  animate={{
+                    scale: [1, 1.05, 1],
+                    rotate: [0, 1, 0, -1, 0]
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 6,
+                    ease: "easeInOut"
+                  }}
+                >
+                  <DFILogo className="h-72 w-72" />
+                </motion.div>
+              </div>
+              <motion.div 
+                className="absolute -bottom-4 -right-4 w-32 h-32 bg-primary opacity-20 rounded-xl"
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ repeat: Infinity, duration: 4 }}
               />
               <motion.div 
-                className="absolute -bottom-4 -right-4 w-32 h-32 bg-primary opacity-10 rounded-xl"
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ repeat: Infinity, duration: 3 }}
-              />
-              <motion.div 
-                className="absolute -top-4 -left-4 w-32 h-32 bg-primary opacity-10 rounded-xl"
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ repeat: Infinity, duration: 3, delay: 1.5 }}
+                className="absolute -top-4 -left-4 w-32 h-32 bg-primary opacity-20 rounded-xl"
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ repeat: Infinity, duration: 4, delay: 2 }}
               />
             </div>
           </motion.div>
