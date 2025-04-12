@@ -41,12 +41,12 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
   const [showLoading, setShowLoading] = useState(true);
   
   useEffect(() => {
-    // Secuencia de animación
-    const timer1 = setTimeout(() => setShowLogo(true), 500);
+    // Secuencia de animación (reducida en tiempo)
+    const timer1 = setTimeout(() => setShowLogo(true), 300);
     const timer2 = setTimeout(() => {
       setShowLoading(false);
       onLoadingComplete();
-    }, 5500);
+    }, 3500); // Reducido de 5500 a 3500 ms
     
     return () => {
       clearTimeout(timer1);
@@ -90,11 +90,11 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
           {showLogo && (
             <div className="mt-4 flex flex-col items-center">
               <div className="font-inter font-bold text-3xl md:text-4xl flex">
-                <TextReveal text="Dark" delay={1} className="mr-0" textColor="text-white" />
-                <TextReveal text="Fortress" delay={1.3} className="mr-0" textColor="text-white" />
+                <TextReveal text="Dark" delay={0.6} className="mr-0" textColor="text-white" />
+                <TextReveal text="Fortress" delay={0.9} className="mr-0" textColor="text-white" />
               </div>
               <div className="font-inter font-bold text-3xl md:text-4xl flex mt-1">
-                <TextReveal text="Intelligence" delay={1.8} textColor="text-primary" />
+                <TextReveal text="Intelligence" delay={1.2} textColor="text-primary" />
               </div>
             </div>
           )}
@@ -103,7 +103,7 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 3, duration: 0.8 }}
+            transition={{ delay: 2, duration: 0.5 }}
             className="mt-12"
           >
             <div className="flex space-x-3">
