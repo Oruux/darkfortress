@@ -1,0 +1,147 @@
+import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
+import { Search, ShieldAlert, UserPlus, Laptop, Lock, GraduationCap, Check } from 'lucide-react';
+
+const services = [
+  {
+    id: 1,
+    icon: <Search className="text-2xl text-primary" />,
+    title: 'OSINT Investigations',
+    description: 'Descubra amenazas y oportunidades mediante técnicas avanzadas de inteligencia de fuentes abiertas.',
+    features: [
+      'Análisis de perfiles digitales',
+      'Monitoreo de presencia web',
+      'Detección de información sensible'
+    ]
+  },
+  {
+    id: 2,
+    icon: <ShieldAlert className="text-2xl text-primary" />,
+    title: 'Threat Intelligence',
+    description: 'Anticipamos y mitigamos amenazas cibernéticas antes de que impacten su organización.',
+    features: [
+      'Monitoreo de Dark Web',
+      'Análisis de actores de amenaza',
+      'Reportes de inteligencia'
+    ]
+  },
+  {
+    id: 3,
+    icon: <UserPlus className="text-2xl text-primary" />,
+    title: 'Cyber Risk Assessment',
+    description: 'Evaluamos sus vulnerabilidades y fortalecemos su postura de seguridad con metodologías avanzadas.',
+    features: [
+      'Análisis de superficie de ataque',
+      'Pruebas de penetración',
+      'Recomendaciones de mitigación'
+    ]
+  },
+  {
+    id: 4,
+    icon: <Laptop className="text-2xl text-primary" />,
+    title: 'Digital Forensics',
+    description: 'Investigación y análisis forense digital para la reconstrucción de incidentes y evidencias.',
+    features: [
+      'Recuperación de datos',
+      'Análisis de malware',
+      'Investigación de incidentes'
+    ]
+  },
+  {
+    id: 5,
+    icon: <Lock className="text-2xl text-primary" />,
+    title: 'Security Monitoring',
+    description: 'Vigilancia continua de su infraestructura para detectar y responder a amenazas en tiempo real.',
+    features: [
+      'Monitoreo 24/7',
+      'Detección de amenazas',
+      'Respuesta a incidentes'
+    ]
+  },
+  {
+    id: 6,
+    icon: <GraduationCap className="text-2xl text-primary" />,
+    title: 'Security Training',
+    description: 'Capacitación especializada en ciberseguridad e OSINT para su equipo técnico y empleados.',
+    features: [
+      'Concientización en seguridad',
+      'Técnicas avanzadas de OSINT',
+      'Respuesta a incidentes'
+    ]
+  }
+];
+
+const serviceVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.1 * i,
+      duration: 0.5,
+    }
+  })
+};
+
+const Services = () => {
+  return (
+    <section id="servicios" className="py-20 relative bg-secondary">
+      <div className="container mx-auto px-6 z-10 relative">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl md:text-5xl font-bold font-inter mb-4 gradient-text">Servicios de Inteligencia</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Ofrecemos soluciones avanzadas de ciberseguridad e inteligencia OSINT para proteger su infraestructura y datos críticos.
+          </p>
+        </motion.div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.id}
+              className="glass-card rounded-xl p-6 h-full flex flex-col"
+              custom={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={serviceVariants}
+            >
+              <div className="bg-primary bg-opacity-20 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                {service.icon}
+              </div>
+              <h3 className="text-xl font-bold font-inter mb-3">{service.title}</h3>
+              <p className="text-muted-foreground flex-grow">
+                {service.description}
+              </p>
+              <ul className="mt-4 space-y-2 mb-6">
+                {service.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-center">
+                    <Check className="text-primary mr-2 h-4 w-4" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button 
+                variant="outline" 
+                className="text-primary hover:text-white hover:bg-primary border-primary transition duration-300 mt-auto"
+                onClick={() => {
+                  const element = document.querySelector('#contacto');
+                  if (element) element.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Solicitar Servicio
+              </Button>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Services;
