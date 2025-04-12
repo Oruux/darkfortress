@@ -154,7 +154,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-bold font-inter">Email</h4>
-                      <p className="text-muted-foreground">contacto@darkfortress.com</p>
+                      <p className="text-muted-foreground">contacto@darkfortress.com.mx</p>
                     </div>
                   </motion.li>
                   
@@ -186,7 +186,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-bold font-inter">Ubicación</h4>
-                      <p className="text-muted-foreground">Madrid, España</p>
+                      <p className="text-muted-foreground">CDMX, México</p>
                     </div>
                   </motion.li>
                 </ul>

@@ -106,7 +106,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="flex items-center">
                 <Mail className="text-primary mr-2 h-4 w-4" />
-                <span className="text-muted-foreground">contacto@darkfortress.com</span>
+                <span className="text-muted-foreground">contacto@darkfortress.com.mx</span>
               </li>
               <li className="flex items-center">
                 <Phone className="text-primary mr-2 h-4 w-4" />
@@ -114,7 +114,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <MapPin className="text-primary mr-2 h-4 w-4" />
-                <span className="text-muted-foreground">Madrid, España</span>
+                <span className="text-muted-foreground">CDMX, México</span>
               </li>
             </ul>
           </motion.div>
