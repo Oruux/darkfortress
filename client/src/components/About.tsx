@@ -184,8 +184,10 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
               >
-                <div className="bg-primary bg-opacity-20 p-2 rounded-full flex items-center justify-center mt-1">
-                  <ShieldCheck className="text-primary h-5 w-5" />
+                <div className="flex items-center justify-center mt-1">
+                  <ShieldCheck className="h-6 w-6 text-white stroke-[1.25]" style={{ 
+                    filter: 'drop-shadow(0 0 3px rgba(167, 139, 250, 0.9))' 
+                  }} />
                 </div>
                 <div>
                   <h3 className="font-bold font-inter">Protección Integral</h3>
@@ -200,8 +202,10 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.1 }}
               >
-                <div className="bg-primary bg-opacity-20 p-2 rounded-full flex items-center justify-center mt-1">
-                  <TrendingUp className="text-primary h-5 w-5" />
+                <div className="flex items-center justify-center mt-1">
+                  <TrendingUp className="h-6 w-6 text-white stroke-[1.25]" style={{ 
+                    filter: 'drop-shadow(0 0 3px rgba(167, 139, 250, 0.9))' 
+                  }} />
                 </div>
                 <div>
                   <h3 className="font-bold font-inter">Innovación Constante</h3>
@@ -216,8 +220,10 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.2 }}
               >
-                <div className="bg-primary bg-opacity-20 p-2 rounded-full flex items-center justify-center mt-1">
-                  <Users className="text-primary h-5 w-5" />
+                <div className="flex items-center justify-center mt-1">
+                  <Users className="h-6 w-6 text-white stroke-[1.25]" style={{ 
+                    filter: 'drop-shadow(0 0 3px rgba(167, 139, 250, 0.9))' 
+                  }} />
                 </div>
                 <div>
                   <h3 className="font-bold font-inter">Equipo Especializado</h3>
@@ -232,8 +238,10 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.3 }}
               >
-                <div className="bg-primary bg-opacity-20 p-2 rounded-full flex items-center justify-center mt-1">
-                  <Lock className="text-primary h-5 w-5" />
+                <div className="flex items-center justify-center mt-1">
+                  <Lock className="h-6 w-6 text-white stroke-[1.25]" style={{ 
+                    filter: 'drop-shadow(0 0 3px rgba(167, 139, 250, 0.9))' 
+                  }} />
                 </div>
                 <div>
                   <h3 className="font-bold font-inter">Confidencialidad</h3>
