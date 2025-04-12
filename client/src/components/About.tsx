@@ -16,7 +16,7 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="relative flex items-center justify-center w-full h-full">
-              <div className="rounded-xl p-12 shadow-lg glass-card relative flex items-center justify-center w-full bg-gradient-to-br from-black to-slate-900">
+              <div className="rounded-xl p-12 shadow-lg glass-card relative flex flex-col items-center justify-center w-full bg-gradient-to-br from-black to-slate-900">
                 <motion.div
                   animate={{
                     scale: [1, 1.05, 1],
@@ -28,7 +28,21 @@ const About = () => {
                     ease: "easeInOut"
                   }}
                 >
-                  <DFILogo className="h-72 w-72" />
+                  <DFILogo className="h-60 w-60" />
+                </motion.div>
+                
+                <motion.div 
+                  className="text-center mt-6 border-t border-slate-800 pt-4 px-2"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                >
+                  <h4 className="text-primary font-bold mb-2">El Zorro: Guardián de la Red</h4>
+                  <p className="text-gray-400 text-sm">
+                    Como el zorro, nos movemos sigilosos y astutos en el ámbito digital, detectando amenazas antes de que ataquen. 
+                    Combinamos inteligencia, adaptabilidad y perspicacia para proteger lo que más importa.
+                  </p>
                 </motion.div>
               </div>
               <motion.div 
