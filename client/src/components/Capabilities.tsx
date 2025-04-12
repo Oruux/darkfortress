@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { SearchIcon, Database, BrainCircuit, Globe } from 'lucide-react';
+import { Search, Database, BrainCircuit, Globe } from 'lucide-react';
 
 // Dashboard mockup component
 const DashboardMockup = () => {
@@ -145,25 +145,25 @@ const DashboardMockup = () => {
 const capabilities = [
   {
     id: 1,
-    icon: <SearchIcon className="text-2xl text-primary" />,
+    icon: <Search className="h-10 w-10 text-white stroke-[1.25]" />,
     title: 'OSINT Avanzado',
     description: 'Obtención y análisis de información de fuentes abiertas con herramientas especializadas.'
   },
   {
     id: 2,
-    icon: <Database className="text-2xl text-primary" />,
+    icon: <Database className="h-10 w-10 text-white stroke-[1.25]" />,
     title: 'Big Data Analytics',
     description: 'Análisis masivo de datos para identificar patrones y tendencias de seguridad.'
   },
   {
     id: 3,
-    icon: <BrainCircuit className="text-2xl text-primary" />,
+    icon: <BrainCircuit className="h-10 w-10 text-white stroke-[1.25]" />,
     title: 'IA & Machine Learning',
     description: 'Algoritmos de inteligencia artificial para la detección proactiva de amenazas.'
   },
   {
     id: 4,
-    icon: <Globe className="text-2xl text-primary" />,
+    icon: <Globe className="h-10 w-10 text-white stroke-[1.25]" />,
     title: 'Cobertura Global',
     description: 'Monitoreo de amenazas en múltiples idiomas y regiones geográficas.'
   }
@@ -200,8 +200,10 @@ const Capabilities = () => {
                 transition={{ duration: 0.4, delay: 0.1 * index }}
                 whileHover={{ y: -5 }}
               >
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary bg-opacity-20 mb-4">
-                  {capability.icon}
+                <div className="flex items-center justify-center h-16 w-16 mb-4">
+                  <div style={{ filter: 'drop-shadow(0 0 3px rgba(167, 139, 250, 0.9))' }}>
+                    {capability.icon}
+                  </div>
                 </div>
                 <h3 className="text-xl font-bold font-inter mb-2">{capability.title}</h3>
                 <p className="text-muted-foreground">
