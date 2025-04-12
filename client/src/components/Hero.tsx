@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { Shield, Activity } from 'lucide-react';
+import heroImage from '@/assets/hero-image.png';
 
 const Hero = () => {
   return (
@@ -52,14 +53,14 @@ const Hero = () => {
           >
             <div className="relative p-2 glass rounded-xl overflow-hidden animate-float">
               <img 
-                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
-                alt="Operaciones de Ciberseguridad" 
+                src={heroImage} 
+                alt="Operaciones de Ciberseguridad e Inteligencia" 
                 className="rounded-lg w-full h-auto shadow-lg transform hover:scale-105 transition duration-500"
               />
               <div className="absolute bottom-0 left-0 w-full p-4 glass">
                 <div className="flex items-center">
                   <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse mr-2"></div>
-                  <span className="font-mono text-sm">Monitoreo activo de amenazas</span>
+                  <span className="font-mono text-sm">Monitoreo global de inteligencia</span>
                 </div>
               </div>
             </div>
